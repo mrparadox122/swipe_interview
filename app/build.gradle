@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -38,7 +38,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.github.atwa:filepicker:1.0.7'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.github.bumptech.glide:glide:4.15.1'
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'

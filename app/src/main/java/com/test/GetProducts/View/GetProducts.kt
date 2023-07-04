@@ -1,4 +1,4 @@
-package com.test.View
+package com.test.GetProducts.View
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -15,26 +16,27 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
+import com.test.AddProducts.View.AddProducts
 import com.test.Controllers.ProductService
-import com.test.Models.Product
+import com.test.GetProducts.Model.Product
 import com.test.R
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class BlankFragment : Fragment() {
+class GetProducts : Fragment() {
     private lateinit var toolbar: MaterialToolbar
     private lateinit var searchView: SearchView
     private lateinit var recyclerView: RecyclerView
     private lateinit var search: EditText
     private lateinit var adapter: ProductAdapter
-    private lateinit var AddProductButton: Button
+    private lateinit var AddProductButton: ImageButton
     private var productList: List<Product> = emptyList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_blank, container, false)
+        return inflater.inflate(R.layout.fragment_get_products, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,7 +47,7 @@ class BlankFragment : Fragment() {
     {
         toolbar = view.findViewById(R.id.toolbar)
         (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
-        AddProductButton = view.findViewById(R.id.AddProduct);
+        AddProductButton = view.findViewById(R.id.AddProduct)
         search = view.findViewById(R.id.Search)
         search.addTextChangedListener { text ->
             val query = text?.toString()?.trim()
@@ -78,7 +80,7 @@ class BlankFragment : Fragment() {
                 adapter.submitList(productList)
             } catch (e: Exception) {
                 // Handle error
-                Toast.makeText(requireContext(), "Internal Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Internal Error", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -94,8 +96,12 @@ class BlankFragment : Fragment() {
         }
     }
 
-    private fun AddProduct()
-    {
-
+    private fun AddProduct() {
+        val addProductFragment = AddProducts() // Create an instance of the AddProductFragment
+        val fragmentManager = requireActivity().supportFragmentManager // Get the fragment manager
+        val fragmentTransaction = fragmentManager.beginTransaction() // Start a fragment transaction
+        fragmentTransaction.replace(R.id.fragment_container, addProductFragment) // Replace the current fragment with the AddProductFragment
+        fragmentTransaction.addToBackStack(null) // Add the transaction to the back stack
+        fragmentTransaction.commit() // Commit the transaction
     }
 }

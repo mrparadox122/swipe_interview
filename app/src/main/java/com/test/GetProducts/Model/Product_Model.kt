@@ -1,4 +1,4 @@
-package com.test.Models
+package com.test.GetProducts.Model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/custom_edittext"
+    android:layout_margin="@dimen/_4sdp"
+    android:elevation="@dimen/_8sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_add_photo_alternate_24"
+        android:layout_marginTop="@dimen/_20sdp"
+        />
+
+    <!-- EditText fields -->
+
+    <EditText
+        android:id="@+id/editTextProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:hint="Product Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextProductType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/editTextProductName"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:hint="Product Type"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/editTextProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/editTextProductType"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:hint="Price: ₹1234"
+        android:textSize="14sp"
+        android:textColor="#008000" />
+
+    <EditText
+        android:id="@+id/editTextProductTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/editTextProductPrice"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:hint="Tax: ₹1234"
+        android:textSize="14sp"
+        android:textColor="#FF0000" />
+
+    <!-- Horizontal LinearLayout at the bottom -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextProductTax"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#43C343"
+            android:text="Upload"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF0000"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

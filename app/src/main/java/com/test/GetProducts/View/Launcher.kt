@@ -1,4 +1,4 @@
-package com.test.View
+package com.test.GetProducts.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +11,7 @@ class Launcher : AppCompatActivity() {
 
         // Replace the fragment container with BlankFragment
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, BlankFragment())
+            .replace(R.id.fragment_container, GetProducts())
             .commit()
     }
 }

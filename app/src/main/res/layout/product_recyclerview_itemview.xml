@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/custom_edittext"
+    android:layout_margin="@dimen/_4sdp"
+    android:elevation="@dimen/_8sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_refresh_24" />
+
+    <TextView
+        android:id="@+id/textViewProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:text="Product Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewProductType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/textViewProductName"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Product Type"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textViewProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/textViewProductType"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Price: $1234"
+        android:textSize="14sp"
+        android:textColor="#008000" />
+
+    <TextView
+        android:id="@+id/textViewProductTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:layout_below="@id/textViewProductPrice"
+        android:layout_marginStart="@dimen/_16sdp"
+         android:layout_marginTop="@dimen/_5sdp"
+        android:text="Tax: $1234"
+        android:textSize="14sp"
+        android:textColor="#FF0000" />
+
+</RelativeLayout>

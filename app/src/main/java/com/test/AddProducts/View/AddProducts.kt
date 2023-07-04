@@ -115,7 +115,7 @@ class AddProducts : Fragment() {
                     fragmentTransaction.replace(R.id.fragment_container, getProductFragment) // Replace the current fragment with the AddProductFragment
                     fragmentTransaction.addToBackStack(null) // Add the transaction to the back stack
                     fragmentTransaction.commit() // Commit the transaction
-                    Log.wtf("onResponse: ",responseBody.toString() )
+
                 } else {
                     Log.wtf("onResponse: ",response.body().toString() )
                     Log.wtf("onResponse: ",response.errorBody().toString() )
@@ -131,7 +131,12 @@ class AddProducts : Fragment() {
 
     private fun CancelUpload()
     {
-
+        val getProductFragment = GetProducts() // Create an instance of the AddProductFragment
+        val fragmentManager = requireActivity().supportFragmentManager // Get the fragment manager
+        val fragmentTransaction = fragmentManager.beginTransaction() // Start a fragment transaction
+        fragmentTransaction.replace(R.id.fragment_container, getProductFragment) // Replace the current fragment with the AddProductFragment
+        fragmentTransaction.addToBackStack(null) // Add the transaction to the back stack
+        fragmentTransaction.commit() // Commit the transaction
     }
 
     private fun SelectImage()
